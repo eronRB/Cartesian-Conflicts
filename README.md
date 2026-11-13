@@ -30,6 +30,7 @@ classDiagram
         +String email
         +placeOrder() void
     }
+```
 ## Goals:
 
 #### Objective 1: A functional cartesian plane (game board) that can render almost any function. 
