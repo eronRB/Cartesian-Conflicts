@@ -26,8 +26,8 @@
 ```mermaid
 classDiagram
     class GameObject {
-      +float x
-      +float y
+      -float x
+      -float y
       +update_position(float x, float y)
     }
     
