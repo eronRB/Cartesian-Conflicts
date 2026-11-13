@@ -33,25 +33,25 @@ classDiagram
     
     class GraphType {
       <<abstract>>
-      +String name
+      -String name
       +evaluate(float x) float
     }
     
     class DynamicGraph {
-      +String expression
+      -String expression
       +evaluate(float x) float
     }
     
     class GraphEntity {
-      +int hp
-      +int damage_value
-      +List~Tuple~ coordinates
+      -int hp
+      -int damage_value
+      -List~Tuple~ coordinates
       +assign_coordinate(float x, float y)
       +calculate_graph_damage() int
     }
     
     class Team {
-      +collect_user_input_coordinates()
+      -collect_user_input_coordinates()
     }
     
     class Enemy {
