@@ -70,11 +70,15 @@ classDiagram
 
     GameObject <|-- GraphEntity
     GraphType <|-- DynamicGraph
-    GraphEntity *-- GraphType : utilizes
+    
+    GraphEntity "1" *-- "1" GraphType : utilizes
     GraphEntity <|-- Team
     GraphEntity <|-- Enemy
-    GameManager --> GameBoard : controls
-    GameManager --> GraphEntity : manages
+    
+    GameManager "1" --> "1" GameBoard : controls
+    GameManager "1" --> "1" Team : manages
+    GameManager "1" --> "1..*" Enemy : manages
+    GameBoard "1" --> "0..*" GameObject : renders
 ```
 
 ### Goals:
