@@ -26,32 +26,32 @@
 ```mermaid
 classDiagram
     class GameObject {
-      -float x
-      -float y
+      -x : Float
+      -y : Float
       +update_position(float x, float y)
     }
     
     class GraphType {
       <<abstract>>
-      -String name
+      -name : String
       +evaluate(float x) float
     }
     
     class DynamicGraph {
-      -String expression
+      -expression : String
       +evaluate(float x) float
     }
     
     class GraphEntity {
-      -int hp
-      -int damage_value
-      -List~Tuple~ coordinates
+      -hp : Int
+      -damage_ value : Int
+      -coordinates : List
       +assign_coordinate(float x, float y)
       +calculate_graph_damage() int
     }
     
     class Team {
-      -collect_user_input_coordinates()
+      +collect_user_input_coordinates()
     }
     
     class Enemy {
