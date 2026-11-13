@@ -18,6 +18,25 @@
   
     The game includes a 2D coordinate grid board, player and bot health bars, a reasoning engine for the Astra Bots, and a turn based system. The expected output is a fully playable 2D game where players advance through waves of enemies using mathematical functions, adapting their equations to counter different bot formations and defensive strategies before confronting and defeating the boss to win.
 
+  The classes include the: 
+  
+  - GameObject(Attributes: x (float), y (float) Methods: update_position(x, y)) 
+ 
+  - GraphType(Attributes: name (string) Methods: evaluate(x)) 
+  
+  - DynamicGraph(Attributes: expression (string) Methods: evaluate(x)) 
+  
+  - GraphEntity(Attributes: hp (int), damage_value(int), coordinates(list) Methods: assign_coordinate(x, y), calculate_graph_damage()) 
+  
+  - Team(Methods: collect_user_input_coordinates()) 
+  
+   - Enemy(Methods: collect_enemy_coordinates(target_x, target_y)) 
+  
+   - GameManager(Methods: startGame(), switchTurn()) 
+  
+   - GameBoard(Methods: renderEntities(List entities), drawGrid()) 
+
+  The GameManager controls the flow of the game like Team, Enemy, and GameBoard. During the player's turn, the Team collects user input to plot points and when an attack executes the system uses calculate_graph_damge() to run these plotted coordinates through the DynamicGraph's evaluate() method. On the AI's turn, the Enemy automatically generates its own attack coordinates using collect_enemy_coordinates() based on its assigned graph logic.
 - Include the description as well of your target demographics as the user of your application.
   
     The primary target users are middle school, high school, and college students who are learning concepts related to algebra, geometry, pre-calculus, and some topics related to calculus.
@@ -34,12 +53,12 @@ classDiagram
     class GraphType {
       <<abstract>>
       -name : String
-      +evaluate(float x) float
+      +evaluate(float x) 
     }
     
     class DynamicGraph {
       -expression : String
-      +evaluate(float x) float
+      +evaluate(float x) 
     }
     
     class GraphEntity {
@@ -47,7 +66,7 @@ classDiagram
       -damage_ value : Int
       -coordinates : List
       +assign_coordinate(float x, float y)
-      +calculate_graph_damage() int
+      +calculate_graph_damage() 
     }
     
     class Team {
@@ -82,6 +101,8 @@ classDiagram
 ```
 
 ### Goals:
+
+The goal of Cartesian Conflicts is to make people, including ourselves, increase their mathematic literacy and improve their intuitive understanding of functions. Cartesian Conflicts should also be a reliable and educational game that is almost entirely bug free.
 
 Describe the long term outcomes of your project followed by a couple of objectives to meet the goals stated in this paragraph
 
